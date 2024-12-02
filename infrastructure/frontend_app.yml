@@ -1,11 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-project: default
-source:
-  repoURL: 'https://github.com/lucaz1992/Argo_CD'
-  path: frontend
-  targetRevision: main
-destination:
-  server: 'https://kubernetes.default.svc'
-  namespace: default
-syncPolicy: {}
+metadata:
+  name: frontend
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/lucaz1992/Argo_CD'
+    path: frontend
+    targetRevision: main
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy: {}

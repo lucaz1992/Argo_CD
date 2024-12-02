@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: backend
-        image: lzabinsk/panda-back:latest
+        image: lzabinsk/panda-back:RC-7
         ports:
         - containerPort: 5001
